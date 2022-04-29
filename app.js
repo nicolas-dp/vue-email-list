@@ -2,9 +2,28 @@ const app = new Vue({
 
     el: "#app",
 
-    data: { },
+    data: {
+        mail_random: null
 
-    methods: {}
+    },
+
+    methods: {},
+
+    mounted() {
+
+        axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+            .then(response => {
+                console.log(this);
+
+                this.mail_random = response.data.response
+
+
+
+
+            })
+
+
+    }
 
 
 })
